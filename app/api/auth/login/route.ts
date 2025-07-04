@@ -7,21 +7,26 @@ export async function POST(request: NextRequest) {
   try {
     await connectDB()
 
-    const { username, password } = await request.json()
+    const { identifier, password } = await request.json()
 
     // Validate input
-    if (!username || !password) {
+    if (!identifier || !password) {
       return NextResponse.json(
         {
           success: false,
-          message: "Username and password are required",
+          message: "Identifier and password are required",
         },
         { status: 400 },
       )
     }
 
-    // Find user
-    const user = await User.findOne({ username })
+    // Find user by username or email
+    const user = await User.findOne({
+      $or: [
+        { username: identifier },
+        { email: identifier },
+      ],
+    })
     if (!user) {
       return NextResponse.json(
         {

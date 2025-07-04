@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export default function LoginForm({ onSuccess, onToggle }) {
   const [formData, setFormData] = useState({
-    username: "",
+    identifier: "",
     password: "",
   })
   const [error, setError] = useState("")
@@ -53,12 +53,12 @@ export default function LoginForm({ onSuccess, onToggle }) {
       {error && <div className="error-message">{error}</div>}
 
       <div className="form-group">
-        <label htmlFor="username">Username</label>
+        <label htmlFor="identifier">Username or Email</label>
         <input
           type="text"
-          id="username"
-          name="username"
-          value={formData.username}
+          id="identifier"
+          name="identifier"
+          value={formData.identifier}
           onChange={handleChange}
           required
           disabled={loading}

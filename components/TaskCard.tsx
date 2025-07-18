@@ -1,19 +1,27 @@
 "use client"
 
-const PRIORITY_COLORS = {
+interface TaskCardProps {
+  task: any;
+  onEdit: (task: any) => void;
+  onDelete: (task: any) => void;
+  onDragStart: (e: React.DragEvent, task: any) => void;
+  currentUser: any;
+}
+
+const PRIORITY_COLORS: { [key: string]: string } = {
   low: "#95a5a6",
   medium: "#f39c12",
   high: "#e74c3c",
 }
 
-const PRIORITY_LABELS = {
+const PRIORITY_LABELS: { [key: string]: string } = {
   low: "🟢 Low",
   medium: "🟡 Medium",
   high: "🔴 High",
 }
 
-export default function TaskCard({ task, onEdit, onDelete, onDragStart, currentUser }) {
-  const handleDragStart = (e) => {
+export default function TaskCard({ task, onEdit, onDelete, onDragStart, currentUser }: TaskCardProps) {
+  const handleDragStart = (e: React.DragEvent) => {
     onDragStart(e, task)
   }
 
@@ -50,12 +58,7 @@ export default function TaskCard({ task, onEdit, onDelete, onDragStart, currentU
           {task.assignedUser && <div className="task-assignee">👤 {task.assignedUser.username}</div>}
         </div>
 
-        <div className="task-footer">
-          <small className="task-date">Created: {new Date(task.createdAt).toLocaleDateString()}</small>
-          {task.updatedAt !== task.createdAt && (
-            <small className="task-date">Updated: {new Date(task.updatedAt).toLocaleDateString()}</small>
-          )}
-        </div>
+        {/* Removed created/updated dates from the card footer */}
       </div>
     </div>
   )

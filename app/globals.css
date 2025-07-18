@@ -325,7 +325,7 @@ body {
   background: #27272a;
   border: 1px solid #27272a;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 0.5rem 0.75rem;
   cursor: grab;
   transition: all 0.3s ease;
   animation: cardSlideIn 0.3s ease-out;
@@ -361,7 +361,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .task-title {
@@ -404,7 +404,7 @@ body {
 .task-description {
   color: #aaa;
   font-size: 0.875rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
   line-height: 1.4;
 }
 
@@ -412,7 +412,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.3rem;
 }
 
 .task-priority {
@@ -431,7 +431,7 @@ body {
 .task-footer {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.1rem;
 }
 
 .task-date {

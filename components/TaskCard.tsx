@@ -32,16 +32,14 @@ export default function TaskCard({ task, onEdit, onDelete, onDragStart, currentU
       className={`task-card ${isAssignedToCurrentUser ? "assigned-to-me" : ""}`}
       draggable
       onDragStart={handleDragStart}
-      style={{ display: 'flex', alignItems: 'stretch' }}
+      style={{ display: 'flex', alignItems: 'stretch', cursor: 'pointer' }}
+      onClick={() => onEdit(task)}
     >
       <div style={{ width: 6, borderRadius: 6, background: PRIORITY_COLORS[task.priority], marginRight: 16 }} />
       <div style={{ flex: 1 }}>
         <div className="task-header">
           <h4 className="task-title">{task.title}</h4>
           <div className="task-actions">
-            <button onClick={onEdit} className="edit-btn" title="Edit">
-              ✏️
-            </button>
             <button onClick={onDelete} className="delete-btn" title="Delete">
               🗑️
             </button>
@@ -57,8 +55,6 @@ export default function TaskCard({ task, onEdit, onDelete, onDragStart, currentU
 
           {task.assignedUser && <div className="task-assignee">👤 {task.assignedUser.username}</div>}
         </div>
-
-        {/* Removed created/updated dates from the card footer */}
       </div>
     </div>
   )

@@ -78,7 +78,7 @@ export default function RegisterForm({ onSuccess, onToggle }: { onSuccess: any, 
   }
 
   return (
-    <form onSubmit={handleSubmit} className="auth-form" style={{ maxWidth: 700, margin: "0 auto", padding: 32, borderRadius: 18, background: "#18181b", boxShadow: "0 4px 24px #0008", minHeight: 0, maxHeight: 750, overflow: "hidden" }}>
+    <form onSubmit={handleSubmit} className="auth-form" style={{ maxWidth: 700, margin: "0 auto", padding: 32, borderRadius: 18, background: "#18181b", boxShadow: "0 4px 24px #0008", minHeight: 0, maxHeight: 750, overflow: "hidden", width: "100%" }}>
       <h2 style={{ fontSize: 28, marginBottom: 22, textAlign: "center" }}>Register</h2>
       {error && <div className="error-message" style={{ marginBottom: 16 }}>{error}</div>}
       <div className="form-group" style={{ marginBottom: 36 }}>

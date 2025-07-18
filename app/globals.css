@@ -55,7 +55,7 @@ body {
   padding: 2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   width: 100%;
-  max-width: 750px;
+  max-width: 420px;
   animation: slideUp 0.5s ease-out;
 }
 

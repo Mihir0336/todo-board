@@ -163,16 +163,28 @@ export default function Home() {
   if (!user) {
     return (
       <div className="auth-container">
-        <div className="auth-card">
-          <h1 className="app-title">📋 CollabBoard</h1>
-          <p className="app-subtitle">Collaborative Task Management</p>
-
-          {showRegister ? (
+        {showRegister ? (
+          <div style={{
+            background: '#18181b',
+            borderRadius: 12,
+            padding: '2rem',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5)',
+            width: '100%',
+            maxWidth: 700,
+            margin: '0 auto',
+            animation: 'slideUp 0.5s ease-out'
+          }}>
+            <h1 className="app-title">📋 CollabBoard</h1>
+            <p className="app-subtitle">Collaborative Task Management</p>
             <RegisterForm onSuccess={handleLogin} onToggle={() => setShowRegister(false)} />
-          ) : (
+          </div>
+        ) : (
+          <div className="auth-card">
+            <h1 className="app-title">📋 CollabBoard</h1>
+            <p className="app-subtitle">Collaborative Task Management</p>
             <LoginForm onSuccess={handleLogin} onToggle={() => setShowRegister(true)} />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     )
   }
